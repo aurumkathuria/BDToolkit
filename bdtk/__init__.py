@@ -5,11 +5,7 @@
 import pandas as pd
 import numpy as np
 # Import system interaction libraries
-import os
-import sys
-# Import debugging tools
-import pdb
-import doctest
+from sys.path import append
 # Import interactive tools
 import ipywidgets as widgets
 from ipywidgets import interact, interact_manual, interactive
@@ -17,7 +13,7 @@ from ipywidgets import interact, interact_manual, interactive
 import seaborn as sns
 import matplotlib.pyplot as plt
 # Import Utils 
-sys.path.append(".")
+append(".")
 from Utils import Utils as Utils 
 
 class BDTK:
@@ -25,12 +21,15 @@ class BDTK:
     The Big Data Analysis Toolkit. 
     
     Author: Aurum Kathuria 
-    (LinkedIn: linkedin.com/in/heyaurum, GitHub: https://github.com/aurumkathuria)
+    (LinkedIn: https://linkedin.com/in/heyaurum, GitHub: https://github.com/aurumkathuria)
     
     This is the toolkit designed to optimize data anlysis for data scientists & data analysts.
     
     Read the BDTK Handbook for an in-depth explanation of the purpose and features of the Toolkit.
     """
+    
+    __version__ = "0.1.0"
+    __author__ = 'Aurum Kathuria'
     
     def clean_name(self,name):
         Utils.type_check(name, str)
