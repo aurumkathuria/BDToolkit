@@ -256,14 +256,8 @@ class BDTK:
         Examples
         -------------------------------
         >>> bdtk = BDTK(sns.load_dataset('planets')) 
-        >>> bdtk.get_optimal_data_types()
-        {'method': str,
-         'number': numpy.uint8,
-         'orbital_period': numpy.float32,
-         'mass': numpy.float16,
-         'distance': numpy.float32,
-         'year': numpy.uint16}
-        
+        >>> bdtk.get_optimal_data_types(columns=['number'])
+        {'number': numpy.uint8}
         """
         # Get quantitative columns vs. qualitative columns
         if not self.data_types_dict:
@@ -280,7 +274,7 @@ class BDTK:
                          }
         
         # Main loop
-        for col_name in self.dataframe.columns:
+        for col_name in columns:
             # Filter out qualitative columns
             if 'qual' in self.data_types_dict[col_name]:
                 columns_to_optimal_data_types[col_name] = self.dataframe[col_name].dtype
