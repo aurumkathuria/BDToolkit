@@ -1,5 +1,7 @@
 # BDTK
 
+pip install bdtk
+
 The Big Data Analysis Toolkit. 
 
 Author: Aurum Kathuria 
